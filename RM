@@ -1,28 +1,25 @@
-*** Desplegar los contenedores
-Abre una terminal en el directorio que contiene el archivo docker-compose.yml y ejecuta el siguiente comando para iniciar los contenedores:
+#inciar docker swarm
+docker swarm init
+
+#listar nodes del cluste
+docker node ls
 
 
-docker-compose up --scale nodejs-app=3
-
-
-
-*** Paso 6: Escalar los contenedores
-Para aumentar o disminuir el número de contenedores desplegados, puedes utilizar el siguiente comando de docker-compose:
-
-
-docker-compose up --scale nodejs-app=N
+#crear un servicio y hacer deploy con un yml
+docker stack deploy -c docker-compose.yml servicio-web
 
 
 
-*** Donde N es el número deseado de contenedores. Por ejemplo, para escalar a 5 contenedores, puedes ejecutar:
+#Para verificar el estado del servicio y asegurarte de que está funcionando
+docker service ls
+
+ crear imagen 
+docker build -t web1 .
 
 
-docker-compose up --scale nodejs-app=5
+docker stack deploy -c swarm.yml mi_stack
 
 
-*** Y para reducirlos a 2 contenedores:
-
-
-docker-compose up --scale nodejs-app=2
+docker stack services mi_stack
 
 
