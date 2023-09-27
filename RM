@@ -1,0 +1,28 @@
+*** Desplegar los contenedores
+Abre una terminal en el directorio que contiene el archivo docker-compose.yml y ejecuta el siguiente comando para iniciar los contenedores:
+
+
+docker-compose up --scale nodejs-app=3
+
+
+
+*** Paso 6: Escalar los contenedores
+Para aumentar o disminuir el número de contenedores desplegados, puedes utilizar el siguiente comando de docker-compose:
+
+
+docker-compose up --scale nodejs-app=N
+
+
+
+*** Donde N es el número deseado de contenedores. Por ejemplo, para escalar a 5 contenedores, puedes ejecutar:
+
+
+docker-compose up --scale nodejs-app=5
+
+
+*** Y para reducirlos a 2 contenedores:
+
+
+docker-compose up --scale nodejs-app=2
+
+
